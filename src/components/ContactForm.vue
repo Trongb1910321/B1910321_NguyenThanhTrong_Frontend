@@ -43,17 +43,16 @@
             />
             <ErrorMessage name="phone" class="error-feedback"/>
         </div>
-        <div class="form-group group-check" >
-            <label for="favorite" class="form-check-label my-2">
+        <div class="form-group form-check" >
                 <input
-                id="favorite"
-                name="favorite"
-                type="checkbox"
-                class="form-check-input mx-1"
-                v-model="contactLocal.favorite"
+                    name="favorite"
+                    type="checkbox"
+                    class="form-check-input"
+                    v-model="contactLocal.favorite"
                 />
-                 <strong>Liên hệ yêu thích</strong>
-            </label>
+                <label for="favorite" class="form-check-label">
+                    <strong>Liên hệ yêu thích</strong>
+                </label>
         </div>
         <div class="form-group">
             <button class="btn btn-sm btn-primary">
