@@ -23,11 +23,28 @@ const routes = [
         component: ()=> import("@/views/ContactAdd.vue"),
         props: true //enable to use $route.params as props
     },
+    {
+        
+		path: "/login",
+		name: "login",
+        component: ()=> import("@/views/UserLogin.vue"),
+        props: true //enable to use $route.params as props
+		
+	// 	// beforeEnter: redirectIfLoggedIn,
+	},
+    {
+		path: "/register",
+		name: "register",
+        component: ()=> import("@/views/UserRegister.vue"),
+        props: true //enable to use $route.params as props
+	// 	// beforeEnter: redirectIfLoggedIn,
+	},
 ];
  
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes,
 });
+
 
 export default router;

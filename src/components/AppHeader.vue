@@ -8,6 +8,44 @@
                     <i class="fas fa-address-book"></i>
                 </router-link>
             </li>
+            <div class="nav-item">
+                <button class="m-2 btn btn-sm btn-primary" @click="login">
+                    <i class="fa-solid fa-right-to-bracket"></i> Đăng nhập
+                </button>
+                <button class="m-2 btn btn-sm btn-success" @click="register">
+                    <i class="fa-solid fa-registered"></i> Đăng ký
+                </button>
+            </div>
+            
         </div>
     </nav>
+    
 </template>
+
+<script>
+import ContactService from "@/services/contact.service";
+
+export default {
+  
+    methods: {
+        async retrieveContacts() {
+            try {
+                this.contacts = await ContactService.getAll();
+            } catch (error) {
+                console.log(error);
+            }
+        },
+        register() {
+            this.$router.push({ name: "register" });
+        },
+        
+        login() {
+            this.$router.push({ name: "login" });
+        },
+    },
+
+    mounted() {
+        this.refreshList();
+    },
+};
+</script>
